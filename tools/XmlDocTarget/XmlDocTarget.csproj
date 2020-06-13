@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ProjectName\ProjectName.csproj" />
+    <ProjectReference Include="..\..\src\LaunchGlob\LaunchGlob.csproj" />
   </ItemGroup>
 
 </Project>

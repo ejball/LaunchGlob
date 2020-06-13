@@ -1,4 +1,4 @@
-# Contributing to RepoName
+# Contributing to LaunchGlob
 
 ## Prerequisites
 
@@ -13,6 +13,6 @@
 
 ## How to Build
 
-* `git clone https://github.com/ejball/RepoName.git`
-* `cd RepoName`
+* `git clone https://github.com/ejball/LaunchGlob.git`
+* `cd LaunchGlob`
 * `dotnet test`

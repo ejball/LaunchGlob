@@ -8,7 +8,7 @@
     <NoWarn>$(NoWarn);1591;1998</NoWarn>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <RepositoryName>RepoName</RepositoryName>
+    <RepositoryName>LaunchGlob</RepositoryName>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://ejball.com/$(RepositoryName)</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/ejball/$(RepositoryName)/blob/master/VersionHistory.md</PackageReleaseNotes>
