@@ -4,15 +4,12 @@ VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchGlob", "src\LaunchGlob\LaunchGlob.csproj", "{E1BF8BA1-9E9D-4E27-83FC-777B8D14F806}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchGlob.Tests", "tests\LaunchGlob.Tests\LaunchGlob.Tests.csproj", "{DF559AD1-5287-43B1-AB47-61B6F342B0FE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{028A6C6D-8F8F-4A91-A063-45FFCF892109}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		build.cmd = build.cmd
-		build.sh = build.sh
 		.github\workflows\build.yaml = .github\workflows\build.yaml
 		CONTRIBUTING.md = CONTRIBUTING.md
 		Directory.Build.props = Directory.Build.props
@@ -24,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build", "tools\Build\Build.csproj", "{CBD807B4-F49F-4DD1-BC9A-359E90EA913F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlDocTarget", "tools\XmlDocTarget\XmlDocTarget.csproj", "{EC2B2484-B209-41A2-94E5-4203A9740983}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,18 +31,10 @@ Global
 		{E1BF8BA1-9E9D-4E27-83FC-777B8D14F806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1BF8BA1-9E9D-4E27-83FC-777B8D14F806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1BF8BA1-9E9D-4E27-83FC-777B8D14F806}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF559AD1-5287-43B1-AB47-61B6F342B0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF559AD1-5287-43B1-AB47-61B6F342B0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF559AD1-5287-43B1-AB47-61B6F342B0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF559AD1-5287-43B1-AB47-61B6F342B0FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBD807B4-F49F-4DD1-BC9A-359E90EA913F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBD807B4-F49F-4DD1-BC9A-359E90EA913F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBD807B4-F49F-4DD1-BC9A-359E90EA913F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBD807B4-F49F-4DD1-BC9A-359E90EA913F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC2B2484-B209-41A2-94E5-4203A9740983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC2B2484-B209-41A2-94E5-4203A9740983}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC2B2484-B209-41A2-94E5-4203A9740983}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC2B2484-B209-41A2-94E5-4203A9740983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
