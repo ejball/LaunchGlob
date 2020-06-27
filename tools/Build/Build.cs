@@ -1,4 +1,3 @@
-using System;
 using Faithlife.Build;
 using static Faithlife.Build.DotNetRunner;
 
@@ -11,13 +10,6 @@ internal static class Build
 		build.AddDotNetTargets(
 			new DotNetBuildSettings
 			{
-				NuGetApiKey = Environment.GetEnvironmentVariable("NUGET_API_KEY"),
-				DocsSettings = new DotNetDocsSettings
-				{
-					GitLogin = new GitLoginInfo("ejball", Environment.GetEnvironmentVariable("BUILD_BOT_PASSWORD") ?? ""),
-					GitAuthor = new GitAuthorInfo("ejball", "ejball@gmail.com"),
-					SourceCodeUrl = "https://github.com/ejball/LaunchGlob/tree/master/src",
-				},
 				BuildOptions = buildOptions,
 				Verbosity = DotNetBuildVerbosity.Minimal,
 			});
