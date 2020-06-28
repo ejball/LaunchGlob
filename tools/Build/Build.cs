@@ -1,3 +1,4 @@
+using System.IO;
 using Faithlife.Build;
 using static Faithlife.Build.DotNetRunner;
 
