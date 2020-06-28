@@ -15,11 +15,12 @@ internal static class Build
 			});
 
 		build.Target("package")
-			.Describe("Create a standalone executable")
+			.Describe("Creates a standalone executable")
 			.ClearActions()
 			.Does(() =>
 			{
 				RunDotNet("publish",
+					Path.Combine("src", "LaunchGlob", "LaunchGlob.csproj"),
 					"-c", buildOptions.ConfigurationOption!.Value,
 					"-r", "win-x86",
 					"--self-contained", "true",
