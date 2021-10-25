@@ -146,6 +146,6 @@ namespace LaunchGlob
 				caption: c_appCaption);
 		}
 
-		const string c_appCaption = "LaunchGlob";
+		private const string c_appCaption = "LaunchGlob";
 	}
 }
