@@ -1,18 +1,9 @@
-# Contributing to LaunchGlob
+# Contributing
 
-## Prerequisites
+## Publishing
 
-* Install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/).
-* Install [.NET Core 3.x](https://dotnet.microsoft.com/download).
+* To publish the library, update the `<VersionPrefix>` in [`Directory.Build.props`](Directory.Build.props), add a corresponding section to the top of [`ReleaseNotes.md`](ReleaseNotes.md), commit, and push.
 
-## Guidelines
+## Template
 
-* All new code **must** have complete unit tests.
-* All public classes, methods, interfaces, enums, etc. **must** have correct XML documentation comments.
-* Update [VersionHistory](VersionHistory.md) with a human-readable description of the change.
-
-## How to Build
-
-* `git clone https://github.com/ejball/LaunchGlob.git`
-* `cd LaunchGlob`
-* `dotnet test`
+* This repository uses the [`faithlife-build`](https://github.com/Faithlife/CSharpTemplate/tree/faithlife-build) template of [`Faithlife/CSharpTemplate`](https://github.com/Faithlife/CSharpTemplate).

@@ -1,7 +1,3 @@
-using System.IO;
-using Faithlife.Build;
-using static Faithlife.Build.DotNetRunner;
-
 return BuildRunner.Execute(args, build =>
 {
 	var buildOptions = new DotNetBuildOptions();
@@ -10,7 +6,6 @@ return BuildRunner.Execute(args, build =>
 		new DotNetBuildSettings
 		{
 			BuildOptions = buildOptions,
-			Verbosity = DotNetBuildVerbosity.Minimal,
 		});
 
 	build.Target("package")
