@@ -1,8 +1,4 @@
-using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 using ArgsReading;
 using GlobExpressions;
 
@@ -13,9 +9,9 @@ namespace LaunchGlob
 		[STAThread]
 		public static void Main(string[] args)
 		{
-			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
 			try
 			{
@@ -100,40 +96,40 @@ namespace LaunchGlob
 						Text = "Launch",
 					};
 
-					var form = new Form
-					{
-						AcceptButton = launchButton,
-						AutoScaleDimensions = new SizeF(7F, 15F),
-						AutoScaleMode = AutoScaleMode.Font,
-						ClientSize = new Size(484, 151),
-						Controls = { listBox, launchButton },
-						KeyPreview = true,
-						MinimumSize = new Size(300, 150),
-						ShowIcon = false,
-						StartPosition = FormStartPosition.CenterScreen,
-						Text = c_appCaption,
-					};
+					var form = new Form();
+					form.SuspendLayout();
+
+					form.AcceptButton = launchButton;
+					form.AutoScaleDimensions = new SizeF(7F, 15F);
+					form.AutoScaleMode = AutoScaleMode.Font;
+					form.ClientSize = new Size(484, 151);
+					form.Controls.Add(listBox);
+					form.Controls.Add(launchButton);
+					form.KeyPreview = true;
+					form.MinimumSize = new Size(300, 150);
+					form.ShowIcon = false;
+					form.StartPosition = FormStartPosition.CenterScreen;
+					form.Text = c_appCaption;
 
 					foreach (var filePath in filePaths)
 						listBox.Items.Add(filePath);
 					listBox.SelectedIndex = 0;
 
-					listBox.MouseDoubleClick += (s, e) => LaunchSelectedFile();
-					launchButton.Click += (s, e) => LaunchSelectedFile();
-					form.KeyDown += (s, e) =>
+					listBox.MouseDoubleClick += (_, _) => LaunchSelectedFile();
+					launchButton.Click += (_, _) => LaunchSelectedFile();
+					form.KeyDown += (_, e) =>
 					{
 						if (e.KeyCode == Keys.Escape)
 							form.Close();
 					};
 
+					form.ResumeLayout(performLayout: false);
 					Application.Run(form);
 
 					void LaunchSelectedFile()
 					{
-#pragma warning disable 8602 // https://github.com/dotnet/roslyn/issues/40821
 						LaunchFile(filePaths[listBox.SelectedIndex]);
 						form.Close();
-#pragma warning restore 8602
 					}
 				}
 			}

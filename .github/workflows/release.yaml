@@ -12,14 +12,14 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v1
-    - name: Set up .NET Core
+    - name: Set up .NET 6
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.100
+        dotnet-version: 6.0.x
     - name: Build
-      run: .\build.cmd package
+      run: .\build.ps1 package
     - name: Create zip
-      run: Compress-Archive .\src\LaunchGlob\bin\Release\netcoreapp3.1\win-x86\publish\LaunchGlob.exe LaunchGlob.zip
+      run: Compress-Archive .\src\LaunchGlob\bin\Release\net6.0-windows\win-x86\publish\LaunchGlob.exe LaunchGlob.zip
     - name: Create release
       id: create_release
       uses: actions/create-release@v1
