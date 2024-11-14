@@ -12,6 +12,9 @@ namespace LaunchGlob
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
+#pragma warning disable WFO5001
+			Application.SetColorMode(SystemColorMode.System);
+#pragma warning restore WFO5001
 
 			try
 			{
