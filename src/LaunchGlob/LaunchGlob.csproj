@@ -4,12 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ArgsReading" Version="2.3.0" />
-    <PackageReference Include="Glob" Version="1.1.6" />
+    <PackageReference Include="ArgsReading" />
+    <PackageReference Include="Glob" />
   </ItemGroup>
 
 </Project>

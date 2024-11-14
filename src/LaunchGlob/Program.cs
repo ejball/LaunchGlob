@@ -28,7 +28,7 @@ namespace LaunchGlob
 			var workingDirectory = args.ReadOption("w") ?? Environment.CurrentDirectory;
 			var arguments = args.ReadArguments().ToList();
 
-			var globIndex = arguments.FindIndex(x => x.IndexOfAny(new[] { '*', '?', '[', '{' }) != -1);
+			var globIndex = arguments.FindIndex(x => x.IndexOfAny(s_globChars) != -1);
 
 			void LaunchFile(string filePath)
 			{
@@ -143,5 +143,7 @@ namespace LaunchGlob
 		}
 
 		private const string c_appCaption = "LaunchGlob";
+
+		private static readonly char[] s_globChars = ['*', '?', '[', '{'];
 	}
 }
