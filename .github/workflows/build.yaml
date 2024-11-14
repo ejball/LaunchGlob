@@ -19,12 +19,10 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - name: Install .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        global-json-file: './global.json'
     - name: Check out code
       uses: actions/checkout@v3
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
     - name: Restore
       run: .\build.ps1 restore
     - name: Build
