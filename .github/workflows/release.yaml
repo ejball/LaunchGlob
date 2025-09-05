@@ -11,15 +11,13 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v1
-    - name: Set up .NET 6
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
+      uses: actions/checkout@v3
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
     - name: Build
       run: .\build.ps1 package
     - name: Create zip
-      run: Compress-Archive .\src\LaunchGlob\bin\Release\net6.0-windows\win-x86\publish\LaunchGlob.exe LaunchGlob.zip
+      run: Compress-Archive .\artifacts\publish\LaunchGlob\release_win-x64\LaunchGlob.exe LaunchGlob.zip
     - name: Create release
       id: create_release
       uses: actions/create-release@v1
