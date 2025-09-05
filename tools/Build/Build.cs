@@ -16,7 +16,7 @@ return BuildRunner.Execute(args, build =>
 			RunDotNet("publish",
 				Path.Combine("src", "LaunchGlob", "LaunchGlob.csproj"),
 				"-c", buildOptions.ConfigurationOption!.Value,
-				"-r", "win-x86",
+				"-r", "win-x64",
 				"--self-contained", "true",
 				"-p:PublishSingleFile=true");
 		});
