@@ -18,6 +18,7 @@ return BuildRunner.Execute(args, build =>
 				"-c", buildOptions.ConfigurationOption!.Value,
 				"-r", "win-x64",
 				"--self-contained", "true",
-				"-p:PublishSingleFile=true");
+				"-p:PublishSingleFile=true",
+				"-p:EnableCompressionInSingleFile=true");
 		});
 });
