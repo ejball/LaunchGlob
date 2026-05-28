@@ -1,7 +1,15 @@
 # LaunchGlob
 
-Launches the specified app or file, allowing one glob argument.
+Launches the specified app or file, allowing [one glob argument](https://github.com/kthompson/glob#supported-pattern-expressions).
 
-[![Build](https://github.com/ejball/LaunchGlob/workflows/Build/badge.svg)](https://github.com/ejball/LaunchGlob/actions?query=workflow%3ABuild)
+## Install
 
-[Documentation](https://ejball.com/LaunchGlob/) | [Release Notes](https://github.com/ejball/LaunchGlob/blob/master/ReleaseNotes.md) | [Contributing](https://github.com/ejball/LaunchGlob/blob/master/CONTRIBUTING.md)
+Download `LaunchGlob.zip` from the [latest release](https://github.com/ejball/LaunchGlob/releases/latest).
+
+## Usage
+
+* `LaunchGlob *.txt` - Opens the text file in the current directory with the default application. If there are multiple text files, it displays a prompt.
+* `LaunchGlob *.txt -w C:\Temp` - Opens the text file from the specified directory.
+* `LaunchGlob notepad *.txt` - Opens the text file using Notepad.
+* `LaunchGlob **/*.txt` - Opens a text file anywhere in the directory tree.
+* `LaunchGlob code *.txt -- --new-window` - Opens the text file using Visual Studio Code, forcing a new window.
