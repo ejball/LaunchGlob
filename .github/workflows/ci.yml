@@ -1,4 +1,4 @@
-name: Build
+name: Continuous Integration
 
 on:
   push:
@@ -15,15 +15,19 @@ defaults:
   run:
     shell: pwsh
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    name: Build
     runs-on: windows-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Install .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
     - name: Restore
-      run: .\build.ps1 restore
+      run: ./build.ps1 restore
     - name: Build
-      run: .\build.ps1 build --skip restore
+      run: ./build.ps1 build --skip restore
