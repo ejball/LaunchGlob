@@ -1,40 +1,35 @@
 name: Release
+
 on:
   push:
     tags:
     - '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
+
 env:
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_NOLOGO: 1
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  contents: write
+
 jobs:
   build:
+    name: Build
     runs-on: windows-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Install .NET
-      uses: actions/setup-dotnet@v4
-    - name: Build
-      run: .\build.ps1 package
+      uses: actions/setup-dotnet@v5
+    - name: Package
+      run: ./build.ps1 package
     - name: Create zip
-      run: Compress-Archive .\artifacts\publish\${{ github.event.repository.name }}\release_win-x64\${{ github.event.repository.name }}.exe ${{ github.event.repository.name }}.zip
+      run: Compress-Archive ./artifacts/publish/${{ github.event.repository.name }}/release_win-x64/${{ github.event.repository.name }}.exe ${{ github.event.repository.name }}.zip
     - name: Create release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
-        prerelease: false
-    - name: Upload zip
-      id: upload-release-asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./${{ github.event.repository.name }}.zip
-        asset_name: ${{ github.event.repository.name }}.zip
-        asset_content_type: application/zip
+        files: ./${{ github.event.repository.name }}.zip
